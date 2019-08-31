@@ -1,7 +1,8 @@
 const {Schema,model} = require('mongoose');
 
 const DevSchema = new Schema({
-
+    //Aqui se especifica a estrutura do DB, para armazernar um desenvolvedor.
+    //Atibutos obrigatorios se passa como objeto JSON e com Type.
     title:{
         type: String,
         required: true,
@@ -10,6 +11,7 @@ const DevSchema = new Schema({
         type: string,
         required: true,
     },
+    //Atributos não obrigatorios, não se passa objeto JSON nem TYPE.
     bio: String,
     avatar:{
         type: String,
