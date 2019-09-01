@@ -34,7 +34,7 @@ Esta declaração precissa ser feita antes da declaração das rotas.
 
 ----------------------------------------////////////------------------------------------------////////////-------------------------
 
-    Criando rotas com no Node.JS
+    Criando rota de teste com no Node.JS
 
 Para testar as rotas da aplicação, provavelmente ira necessitar de um software para isso, como postman ou insominia.
 
@@ -46,4 +46,11 @@ Um metodo para a adição de novos registros, por padrão é definido como "POST
 
 Todas as informações vindas pela requisiçao ao servidor, estarão contidas em forma de um objeto JSON, 
 e podem ser acessadas pelo parametro "REQ", geralmente é usado este parametro, para a manipulação de informações.
+
+----------------------------------------////////////------------------------------------------////////////-------------------------
+
+OBS.: No final o arquivo "routes" serve apenas para apontar o caminho certo, para as requisições, 
+geralmente aponta para o arquivo "controller", pois neste arquivo é onde fica o verdadeiro código 
+para as requisições.
+
 
