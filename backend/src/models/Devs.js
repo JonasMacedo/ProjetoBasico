@@ -26,13 +26,15 @@ const DevSchema = new Schema({
         ref: 'Devs',
     }],
     createdAt:{
-        type: String,
+        type: Date,
+        default: Data.now,
         required: true,
     },
     updateAt:{
-        type: String,
+        type: Date,
+        default: Date.now,
         required: true,
-    }
+    },
 });
 
 module.exports = model('Devs',DevSchema);
