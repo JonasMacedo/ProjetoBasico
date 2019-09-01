@@ -44,7 +44,7 @@ Para executar a aplicação basta usar o comando.
 
 ----------------------------------------////////////------------------------------------------////////////-------------------------
 
-Criando rotas com o NodeJS.
+Criando rotas simples de Teste.
 
 Apos definir o uso do express no back-end, usando o metodo "Get" sera declarado o a rota.
 Se for a rota raiz da aplicação, basta pasar como parametro apenas a barra "/", o segundo paramentro
