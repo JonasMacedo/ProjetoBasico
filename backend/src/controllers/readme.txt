@@ -3,7 +3,7 @@ Parte 03.
     Controller
 
 Esta pasta contem os arquivos referentes a logica, estes arquivos 
-irão lidar com as operações, que determinado model possa ter, 
+irão lidar com as operações que determinado model possa ter, 
 como listagem, criação de elementos, atualização, remoção entre outras.
 
 Como ira trabalhar com os models e alguns podem estar contidos no DB, 
@@ -11,6 +11,18 @@ sera importante realizar a importação da biblioteca do mangoose.
 
 Tambem sera necessario ralizar o import do model do objeto, que 
 se deseja trabahar.
+
+----------------------------------------////////////------------------------------------------////////////-------------------------
+
+  Acessando Apis.
+
+Para obter as informações vindas de outros serviços, é necessario realizar o import 
+do "Axios" 
+
+-yarn add axios
+
+Dentro do arquivo "controller" realize o import, da biblioteca do axios.
+
 
 ----------------------------------------////////////------------------------------------------////////////-------------------------
 
