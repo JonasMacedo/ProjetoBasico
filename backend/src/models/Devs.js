@@ -3,12 +3,12 @@ const {Schema,model} = require('mongoose');
 const DevSchema = new Schema({
     //Aqui se especifica a estrutura do DB, para armazernar um desenvolvedor.
     //Atibutos obrigatorios se passa como objeto JSON e com Type.
-    title:{
+    name:{
         type: String,
         required: true,
     },
     user:{
-        type: string,
+        type: String,
         required: true,
     },
     //Atributos não obrigatorios, não se passa objeto JSON nem TYPE.
@@ -25,16 +25,8 @@ const DevSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Devs',
     }],
-    createdAt:{
-        type: Date,
-        default: Data.now,
-        required: true,
-    },
-    updateAt:{
-        type: Date,
-        default: Date.now,
-        required: true,
-    },
+},{
+    timestamps: true,
 });
 
 module.exports = model('Devs',DevSchema);
