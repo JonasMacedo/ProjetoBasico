@@ -18,9 +18,9 @@ export default function Login({history}){
 
         const {_id} = response.data;
 
-        console.log(response.data);  
+        console.log(_id);  
         
-        history.push(`/devs/:${_id}`);
+        history.push(`/devs/${_id}`);
     }
 
     return(
