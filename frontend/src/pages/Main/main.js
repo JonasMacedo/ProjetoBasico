@@ -10,7 +10,6 @@ import dislike from '../img/dislike.svg';
 
 export default function Main({match}){
     
-    console.log(match);
     const [users, setUsers] = useState([]);
     
     useEffect(() => {
@@ -20,30 +19,37 @@ export default function Main({match}){
                     user: match.params.id,
                 }
             })
-            
-            //console.log(response.data);
+            console.log('esta no main.');
             setUsers(response.data)
         }
     
         loadUsers();
     },[match.params.id]);
 
+    async function actionLike(){
+        console.log("gostou");
+    }
+
+    async function actionDeslike(){
+        console.log("Deslike");
+    }
+
     return(
         <div className='main-container'>
             <img src={logo} alt="TinDev"></img>
             <ul>
                 {users.map(user => (
-                    <li>
+                    <li key={user._id}>
                         <img src={user.avatar} alt={user.name}></img>
                         <footer>
                             <strong>{user.name}</strong>
                             <p>{user.bio}</p>
                         </footer>
                         <div className="Buttons">
-                            <button type="button">
+                            <button type="button" onClick={()=>actionDeslike(user.id)}>
                                 <img src={dislike} alt="dislike"></img>
                             </button>
-                            <button type="button">
+                            <button type="button" onClick={()=>actionLike(user.id)}>
                                 <img src={like} alt="like"></img>
                             </button>
                         </div>
