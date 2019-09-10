@@ -1,4 +1,5 @@
 const axios = require('axios');
+
 const Dev = require('../models/Devs'); //Importando o model.
 
 module.exports ={
@@ -8,16 +9,32 @@ module.exports ={
         const {user} = req.headers;
 
         const loggedUser = await Dev.findById(user);
-
+        
         const users = await Dev.find({
             $and: [
                 {_id: { $ne: user}},
-                {_id: { $nin:loggedUser.like}},
-                {_id: { $nin:loggedUser.deslikes}},
+                //{_id: { $nin:loggedUser.likes}},//Erro na remoção
+                //{_id: { $nin:loggedUser.deslikes}},//Erro na remoção
             ],
         })
 
         return res.json(users);
+    },
+
+    async destroyDev(req,res){
+        
+        const id = req.headers;
+        //console.log(id)        
+
+        const usuario = await Dev.findById(id);
+        console.log(usuario);
+
+        await Dev.findByIdAndDelete(usuario._id);
+        
+        //await Dev.findByIdAndDelete(req.params._id);
+        //await Dev.findByIdAndRemove(req.params.id);
+
+        return res.json({ok:true});
     },
 
     async plus(req,res){
